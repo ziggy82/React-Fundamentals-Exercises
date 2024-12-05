@@ -100,7 +100,21 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">ReactND - Coding Practice</h1>
       </header>
-      <h2>Favorite Movies</h2>
+      <ul>
+        <h2>Favorite Movies</h2>
+
+        {profiles.map((profile) => {
+          var userName = users[profile.userID].name;
+          //console.log(userName);
+          var favMovieName = movies[profile.favoriteMovieID].name;
+          return (
+            <li id={profile.id}>
+              <p>{`${userName}'s favorite movie is "${favMovieName}"`}</p>
+             
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
